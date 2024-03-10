@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer ser minha Mulher Gato?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(./img/download.jpeg);
+            background-size: cover;
+            background-position: center;
+            font-family: 'Gotham', sans-serif; /* Se você tiver a fonte Gotham instalada, substitua-a aqui */
+            color: white;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: rgba(228, 247, 24, 0.7);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Mídia Queries para Responsividade */
+        @media screen and (max-width: 768px) {
+            #container {
+                height: auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Quer ser minha Mulher Gato?</h1>
+        <button id="nao" onclick="mudarPosicao()">Não</button>
+        <button id="sim" onclick="crescer()">Sim</button>
+    </div>
+
+    <script>
+        var naoSelecionado = true;
+
+        function mudarPosicao() {
+            var naoButton = document.getElementById("nao");
+            var container = document.getElementById("container");
+            var newX = Math.floor(Math.random() * container.offsetWidth);
+            var newY = Math.floor(Math.random() * container.offsetHeight);
+
+            naoButton.style.position = "absolute";
+            naoButton.style.left = newX + "px";
+            naoButton.style.top = newY + "px";
+
+            naoSelecionado = false;
+        }
+
+        function crescer() {
+            if (naoSelecionado) {
+                var simButton = document.getElementById("sim");
+                var simStyle = window.getComputedStyle(simButton);
+                var fontSize = parseFloat(simStyle.getPropertyValue('font-size'));
+                simButton.style.fontSize = (fontSize + 2) + 'px';
+            } else {
+                window.open("https://www.tiktok.com/@psychoharlls/video/7204483767954672942?is_from_webapp=1&sender_device=pc&web_id=7228596328032306693");
+            }
+        }
+    </script>
+</body>
+</html>
